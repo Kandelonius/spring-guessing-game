@@ -6,4 +6,8 @@
 
     <bean id="numberGenerator" class="shane.learnprogramming.NumberGeneratorImpl"/>
 
+    <bean id="game" class="shane.learnprogramming.GameImpl">
+        <constructor-arg ref="numberGenerator"/>
+    </bean>
+
 </beans>
