@@ -7,7 +7,8 @@
     <bean id="numberGenerator" class="shane.learnprogramming.NumberGeneratorImpl"/>
 
     <bean id="game" class="shane.learnprogramming.GameImpl">
-        <constructor-arg ref="numberGenerator"/>
+        <property name="numberGenerator" ref="numberGenerator"/>
+<!--        <constructor-arg ref="numberGenerator"/>-->
     </bean>
 
 </beans>
