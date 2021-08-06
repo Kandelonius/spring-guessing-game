@@ -14,8 +14,9 @@
     <properties>
         <logback.version>1.2.3</logback.version>
         <spring.version>5.2.7.RELEASE</spring.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+<!--        <java.version>14</java.version>-->
+<!--        <maven.compiler.source>1.8</maven.compiler.source>-->
+<!--        <maven.compiler.target>1.8</maven.compiler.target>-->
     </properties>
     <dependencyManagement>
 
@@ -26,24 +27,36 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
-                <!--            <scope>test</scope>-->
             </dependency>
 
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.2</version>
-                <scope>compile</scope>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.slf4j</groupId>-->
+<!--                <artifactId>slf4j-api</artifactId>-->
+<!--                <version>1.7.2</version>-->
+<!--                <scope>compile</scope>-->
+<!--            </dependency>-->
             <!-- Spring context -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-
         </dependencies>
-
     </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <target>14</target>
+                    <source>14</source>
+                    <release>14</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
